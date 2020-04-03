@@ -1,0 +1,79 @@
+@import 'compass/css3';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800italic,400);
+
+$r : 40px;
+$w  : 80px;
+$barH : 8px;
+$stroke : 6px;
+
+$top  : $r/2 + $stroke/2;
+$transition: cubic-bezier(.55,0,.1,1);
+$time : 600ms;
+
+html,body{
+  background-color: #323232;
+  font-family: Open sans;
+}
+
+h1{
+  font-style: 30px;
+  color:white;
+  margin-bottom: 30px;
+  a{
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.center{
+  margin:50px auto;
+  width:400px;
+  text-align: center;
+}
+
+input{
+  display:none;
+}
+fieldset{
+  position: relative;
+  width:$w;
+  margin:0 auto;
+}
+label{
+  cursor:pointer;
+  &:after{
+    left:-($r/2);
+  width:$r;
+  height:$r;
+  @include transition($time $transition);
+  display:inline-block;
+  z-index:1;
+  border: 6px solid #323232;
+  z-index:10;
+  box-shadow:
+      inset 0 0 0px 6px #848484;
+    position:absolute;
+    border-radius:30px;
+    background-color: #323232;
+    content:"";
+    @include transform(translate3d(0,0,0));
+  }
+  &:before{
+    background-color: #474747;
+    height:$barH;
+    width:$w;
+    margin-top: $top;
+    content:"";
+    left:0;
+    z-index:0;
+    position:absolute;
+    border-radius:4px;
+  }
+}
+input[type=checkbox]:checked + label{
+  &:after{
+    @include transform(translate3d(($w - $stroke),0,0));
+    box-shadow:
+      inset 0 0 0px ($r - $stroke*2.5) white;
+  }
+}

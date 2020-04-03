@@ -1,0 +1,375 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 2.0em;
+  position: relative;
+  background:#2a2d32;
+}
+
+* {
+  
+    box-sizing: border-box;
+}
+
+input[type=text], input[type=number], input[type=url], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    resize: vertical;
+    outline: none;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+  width: 32px;
+	height: 32px;
+  border-radius: 7px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 1px;
+  border-radius: 7px;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+  border-radius: 7px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.col-25 {
+    color: white;
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    color: white;
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25 {
+        width: 100%;
+        margin-top: 0;
+    }
+  .col-75 {
+    width: 100%;
+        margin-top: 0;
+  }
+  input[type=submit] {
+    width: 100%;
+        margin-top: 0; 
+  }
+}
+
+switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #42f44b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #21f243;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;   
+  background: #b2b2b2;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #0070fa;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0070fa;
+  cursor: pointer;
+}
+
+.roleBox {
+  border-radius: 3px;
+  padding: 0px 3px;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.status {
+  box-sizing: border-box;
+  border-width: 2px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  float: left;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.online {
+  background-color: #42b581;
+  border-color: #69c49a;
+}
+
+.idle {
+  background-color: #faa61a;
+  border-color: #fbb848;
+}
+
+.btn {
+  background-color: #1c1c1c; 
+  color: white; 
+  border: 2px solid #0070fa;
+  border-radius: 10px;
+  cursor:pointer;
+}
+
+.btn:hover {
+  background-color: #0070fa;
+  color: white;
+}
+
+.save-btn {
+  background-color: #007f10; 
+  color: white; 
+  border: 2px solid #00ba18;
+  border-radius: 4px;
+  outline:none;
+  cursor:pointer;
+  padding:4px 7px;
+  text-decoration:none;
+}
+
+.save-btn:hover {
+  background-color: #00ba18;
+  color: white;
+  outline:none;
+  text-decoration:none;
+}
+
+.reset-btn {
+  background-color: darkred; 
+  color: white; 
+  border: 2px solid red;
+  border-radius: 4px;
+  outline:none;
+  text-decoration:none;
+  padding: 4px 7px;
+  cursor:pointer;
+}
+
+.reset-btn:hover {
+  background-color: red;
+  color: white;
+  outline:none;
+  text-decoration:none;
+  padding: 4px 7px;
+}
+
+@media screen and (max-width: 600px) {
+  .reset-btn {
+    background-color: darkred; 
+    color: white; 
+    border: 2px solid red;
+    border-radius: 4px;
+    outline:none;
+    text-decoration:none;
+    padding: 4px 7px;
+    text-align:center;
+  }
+}
+
+button:disabled {
+  background-color: #444444;
+  border: 2px solid #666666;
+}
+
+button:disabled:hover {
+  background-color: #444444;
+  border: 2px solid #666666;
+}
+
+.dnd {
+  background-color: #f04747;
+  border-color: #f36c6c;
+}
+
+.offline {
+  background-color: #747f8d;
+  border-color: #9099a4;
+}
+.btn
+a
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 200px;
+height: 60px;
+text-align: center;
+line-height:  60px;
+color: #fff;
+font-size: 24px;
+text-transform: uppercase;
+text-decoration: none;
+font-family:  sans-serif;
+box-sizing: border-box;
+background: linear-gradient();
+background-size: 400%;
+border-radius: 30px;
+z-index: 1;
+}
+a:hover
+{
+animation: animate 8s linear infinite
+}
+@keyframes animate{
+0%
+{
+    background-position: 0%;
+}
+100%
+{
+    background-position: 400%;
+}
+}
+a:before
+{
+content: '';
+position: absolute;
+top: -5px;
+left: -5px;
+right: -5px;
+bottom: -5px;
+z-index: -1;
+background: linear-gradient();
+background-size: 400%;
+border-radius: 40px;
+filter: blur(20px);
+opacity: 0;
+transition: 0.5s;
+}
+a:hover:before
+{
+    filter: blur(50px);
+    opacity:10;
+
+}
