@@ -1,0 +1,203 @@
+yardbody {
+  background-image: linear-gradient(to right, #2979FF, #00897B) !important;
+}
+.wrapper-page {
+  padding-bottom: 300px;
+}
+#menu {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.atag {
+  background: rgba(256, 256, 256, 0.2);
+  color: #3c3737;
+}
+.atag:hover {
+  background: #40d463;
+}
+.atag:after {
+  border-left: 10px solid rgba(256, 256, 256, 0.2);
+}
+.atag:hover:after {
+  border-left: 10px solid #40d463;
+}
+.atag:before {
+  background-color: #3c3737;
+}
+.btn.servers,
+.btn.votebutton {
+  background: #2962FF;
+}
+.botpagebutton {
+  background: rgba(256, 256, 256, 0.2);
+  color: #3c3737;
+}
+.botpagebutton:hover {
+  background: #2962FF;
+}
+.bot-description {
+  font-weight: 700 !important;
+  color: #212121;
+}
+.lib a#libclick {
+  color: #40d463 !important;
+}
+.lib a#libclick:hover {
+  color: #78c38a !important;
+}
+.status.green {
+  color: #40d463 !important;
+}
+.status.green:before {
+  background-color: #40d463 !important;
+}
+#bot-details-page #details .container {
+  border: none;
+}
+.columns .bot-img {
+  box-shadow: 1px 1px 0 0, 4px 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+}
+.titleandvote {
+  color: #fff;
+}
+.titleandvote img {
+  display: none;
+}
+#bot-stats > p:first-of-type {
+  color: #212121 !important;
+  display: inline-block;
+}
+#bot-stats > p:nth-child(2) {
+  display: inline-block;
+}
+#bot-details-page .shapes-1,
+#upvotebutton img {
+  display: none;
+}
+code {
+  background-color: rgba(256, 256, 256, 0.2);
+  color: #40d463;
+  border-radius: 3px;
+}
+#createdby,
+.owners a {
+  color: #3c3737;
+}
+#createdby b {
+  background: rgba(256, 256, 256, 0.2);
+}
+#createdby img {
+  margin-left: 5px;
+}
+.voted {
+  background-color: #40d463 !important;
+  border: none;
+}
+.btn-like {
+  color: #fff;
+}
+.longdescription .content {
+  background-color: rgba(256, 256, 256, 0.2);
+}
+span#points {
+  margin: 0 auto;
+}
+span#points:before {
+  content: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2211%22%20height%3D%227%22%20viewBox%3D%220%200%2011%207%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20fill-rule%3D%22nonzero%22%20d%3D%22M10.676%205.615L9.584%206.633a.418.418%200%200%201-.296.117.418.418%200%200%201-.296-.117L5.5%203.358%202.008%206.633a.418.418%200%200%201-.296.117.418.418%200%200%201-.296-.117L.324%205.615a.371.371%200%200%201-.125-.28c0-.11.042-.203.125-.281l4.88-4.57A.418.418%200%200%201%205.5.366c.114%200%20.213.04.296.118l4.88%204.57a.371.371%200%200%201%20.125.28.371.371%200%200%201-.125.281z%22/%3E%0A%3C/svg%3E);
+  margin-right: 5px;
+}
+img[title="Certified Bot"] {
+  width: 50px;
+}
+#upvotebutton {
+  min-width: 75px;
+}
+#bot-info > .is-flex:first-of-type::after {
+  content: "Oy verip bize destek olabilirsin!";
+  margin-left: 10px;
+  color: #fff;
+}
+@media (max-width: 1199px) {
+  img[id^="seed"] {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  img#seed1,
+  img#seed4 {
+    right: -300px;
+    position: absolute;
+  }
+  img#seed1,
+  img#seed2,
+  img#seed3,
+  img#seed4,
+  img#seed5,
+  img#seed6,
+  img#seed7,
+  img#seed8,
+  img#seed9 {
+    position: absolute;
+  }
+  img[id^="seed"] {
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  img[id^="seed"]:hover {
+    transform: rotate(30deg) !important;
+  }
+  img#seed1 {
+    top: -300px;
+    transform: rotate(60deg);
+  }
+  img#seed2 {
+    top: -530px;
+    right: -150px;
+    transform: rotate(-242deg);
+  }
+  img#seed3 {
+    top: 20px;
+    right: -470px;
+    transform: rotate(78deg);
+  }
+  img#seed4 {
+    top: -70px;
+    transform: rotate(110deg);
+  }
+  img#seed5 {
+    top: 230px;
+    right: -250px;
+    transform: rotate(10deg);
+  }
+  img#seed6 {
+    top: -700px;
+    right: -340px;
+    transform: rotate(557deg);
+  }
+  img#seed7 {
+    top: -245px;
+    right: -100px;
+    transform: rotate(160deg);
+  }
+  img#seed8 {
+    top: 500px;
+    right: -280px;
+    transform: rotate(140deg);
+  }
+  img#seed9 {
+    top: 700px;
+    right: -400px;
+    transform: rotate(70deg);
+  }
+  .site-link {
+    color: #40d463;
+  }
+  .site-link:hover {
+    color: #fff;
+  }
+  #tags + p {
+    color: #fff !important;
+  }
+}
