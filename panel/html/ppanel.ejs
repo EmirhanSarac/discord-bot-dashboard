@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  
+<title>
+  Merhaba, <%=user.username%>
+  </title>
+    <link href="/css/baslangic.css" rel="stylesheet" />
+  <link rel='icon' href='<%=bot.avatarURL%>'>
+</head>
+
+<body class="dark-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-2.jpg">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <a href="https://panel.botvortex.xyz/anasayfa" class="simple-text logo-normal">
+          Vortex Anasayfa
+        </a>
+      </div>
+  <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item  ">
+            <a class="nav-link" href="./anasayfa">
+              <i class="material-icons">announcement</i>
+              <p>Bilgilendirme</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./panel">
+              <i class="material-icons">dashboard</i>
+              <p>Yönetim Paneli</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./istatistikler">
+              <i class="material-icons">perm_device_information</i>
+              <p>İstatistikler</p>
+              </a>
+          </li>
+           <li class="nav-item ">
+            <a class="nav-link" href="./sunucular">
+              <i class="material-icons">thumb_up</i>
+              <p>Vortex'i Kullanan Sunucular</p>
+              </a>
+          </li>
+              <li class="nav-item ">
+            <a class="nav-link" href="https://discordapp.com/oauth2/authorize?client_id=612726771632308225&scope=bot&permissions=8">
+              <i class="material-icons">input</i>
+              <p>Botu Sunucuna Ekle</p>
+              </a>
+          </li>
+           
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+          </div>
+          <%if(user) {%>
+           
+            <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=32" width="30" height="30" class="d-inline-block align-middle rounded-circle" alt="">
+           </a>
+          
+         
+      <%}%>
+      </nav>
+      </nav>
+      
+      <!-- End Navbar -->
+     <div class="container">
+  <div class="jumbotron" style="background-color:#1c1c1c">
+    <div align="center">
+      <h3>Sunucu Seçimi</h3>
+      <h5>Yönetmek istediğiniz sunucuya tıklayın</h5>
+      
+      <% user.guilds.forEach((sunucu) => {
+        const permsOnGuild = new perms(sunucu.permissions);
+        if(!permsOnGuild.has("MANAGE_GUILD")) return;
+      %>
+      <%
+      let link, eklenmemis;
+      if (bot.guilds.has(sunucu.id) === true) {
+        link = `/panel/${sunucu.id}/yonet`
+      } else {
+        link = `/botuekle`
+        
+        eklenmemis = true
+      }
+      %>
+      <% if (sunucu.icon) { %>
+      <a href="<%=link%>" target="<%if(eklenmemis === true) {%>_blank<%} else {  }%>"><img title="<%=sunucu.name%>" class="rounded-circle" src="<%= `https://cdn.discordapp.com/icons/${sunucu.id}/${sunucu.icon}.png?size=128` %>" style="width: 80px;" alt=""></a>
+		  <% } else { %>
+      <a href="<%=link%>"><canvas title="<%=sunucu.name%>" style="background-color:#7289da" class="rounded-circle" id="<%= sunucu.name.split(' ').join('').replace(`'`, ``) %>" width="80px" height="80px"></canvas></a>
+		  <script>
+        function draw() {
+        const ctx = document.getElementById("<%= sunucu.name.split(' ').join('').replace(`'`, ``) %>").getContext('2d');
+			  ctx.font = '20px Arial';
+			  ctx.textAlign = "center";
+			  ctx.fillStyle = "white";
+			  ctx.fillText("<%= sunucu.name.split(' ').map(v => v[0]).join('') %>", 40, 48);
+        document.getElementById("<%= sunucu.name.split(' ').join('').replace(`'`, ``) %>").style.marginBottom = "-35px";
+        };
+        draw();
+		  </script>
+		<% } %>
+    <% }); %>
+    </div>
+  </div>
+  
+
+</body>
+
+</html>
+<%- include('footer.ejs', {bot, user, path}) %>
