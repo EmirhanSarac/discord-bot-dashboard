@@ -1,0 +1,398 @@
+<!doctype html>
+ <%- include('başlık.ejs', {bot, user, path}) %>
+<html lang="en">
+
+<head>
+<% if (bot.ayar.has(`karalist_${user.id}`)) return "Botun komutlarını kullanabilme ve siteyi görme hakkınız bulunmamaktadır!";  { %>
+ <% } %>
+
+  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+<link href="/css/site.css" rel="stylesheet" />
+  <link rel='icon' href='<%=bot.avatarURL%>'>
+  <link href="./css/demo.css" rel="stylesheet" />
+<title>
+  Merhaba, <%=user.username%>
+  </title>
+</head>
+
+<body class="dark-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="green" data-background-color="black" data-image="./css/olsana.png">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+     <div class="logo"><a href="http://panel.botvortex.xyz/anasayfa" class="simple-text logo-normal">
+          Vortex Anasayfa
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+        
+         
+           <li class="nav-item ">
+              <a class="nav-link" href="http://panel.botvortex.xyz/anasayfa">
+              <i class="material-icons">announcement</i>
+              <p>Bilgilendirme</p>
+            </a>
+          </li>
+            <li class="nav-item active  ">
+         <a class="nav-link" href="http://panel.botvortex.xyz/panel">
+              <i class="material-icons">dashboard</i>
+              <p>Yönetim Paneli</p>
+            </a>
+          </li>
+             <li class="nav-item ">
+               <a class="nav-link" href="http://panel.botvortex.xyz/kullanici/<%=user.id%>/yonet">
+              <i class="material-icons">photo</i>
+              <p>Seviye Kartı</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="http://panel.botvortex.xyz/kullanici/<%=user.id%>">
+              <i class="material-icons">person</i>
+              <p>Kullanıcı Bilgi</p>
+            </a>
+          </li>
+           <li class="nav-item ">
+            <a class="nav-link" href="http://panel.botvortex.xyz/komutlar">
+              <i class="material-icons">dvr</i>
+              <p>Komutlar</p>
+            </a>
+          </li>
+         
+             <li class="nav-item ">
+            <a class="nav-link" href="http://panel.botvortex.xyz/botuekle">
+              <i class="material-icons">
+add</i>
+              <p>Botu Sunucuna Ekle</p>
+              </a>
+          </li>
+                        <li class="nav-item ">
+            <a class="nav-link" href="./cikis">
+              <i class="material-icons">exit_to_app</i>
+              <p>Çıkış Yap</p>
+              </a>
+          </li>
+           
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+          </div>
+          <%if(user) {%>
+               <%  if(bot.ayar.has(`üyelikk_${user.id}`) === true)  { %>
+            <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=32" width="31" height="31" class="d-inline-block align-middle rounded-circle" style="border-style:solid;border-width: 1px;border-color: #eef60e ">
+           </a>
+          <%  }  %> 
+         
+      <%}%>
+             <%if(user) {%>
+               <%  if(!bot.ayar.has(`üyelikk_${user.id}`) === true)  { %>
+            <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=32" width="30" height="30" class="d-inline-block align-middle rounded-circle" alt="">
+           </a>
+          <%  }  %> 
+         
+      <%}%>
+          
+             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+     
+          
+      </nav>
+          
+<div class="row justify-content-md-center">
+	</div>
+    <% if (bot.ayar.has(`karalist_${user.id}`)) return "Botun komutlarını kullanabilme ve siteyi görme hakkınız bulunmamaktadır!";  { %>
+ <% } %>
+<div class="row">
+    
+<div class="col">
+    <div class="container">
+      
+
+      <br>
+      <br>
+      <div align="center"><h2 style="color: #fff;"><i class="fa fa-wrench fa-fw" aria-hidden="true"></i> Özel Komut Sistemi</h2></div>
+  
+      <center><a align="center" class="btn btn-success" data-toggle="collapse" style="color: white;" data-target="#yeni">Komut Oluştur</a></center>
+        <br>
+        <div id="yeni" class="collapse in">
+      <form method="post">
+        
+        
+          
+          <div class="row">
+                    <div class="col">
+                        <label style="color: white;" for="komut">Komut</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="komut" name="komut" placeholder="Komutun adını yazın." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label style="color: white;" for="aciklama">Açıklama</label>
+                    </div>
+                    <div class="col-75">
+                      <textarea class="form-control" id="aciklama" name="aciklama" rows="3" placeholder="Komut kullanıldığında verilecek cevabı yazın." style="margin-top: 0px; margin-bottom: 0px; height: 65px;" required></textarea>
+                    </div>
+                </div>
+         <button style="background-color:blue; color:#fff" type="sumbit" id="formbtn" class="btn btn-default"><i class="fa fa-fw fa-save" aria-hidden="true"></i> Komut Ekle/Düzenle</button>
+          </form>
+        </div>
+        <br>
+        <h3 align="center" style="color:#fff">
+          Komut Listesi
+      </h3>
+        <br>
+        <%if(bot.cmdd[guild.id]) {%>
+        <table class="table table-hover" style="background-color:#222">
+            <thead>
+                <tr>
+                  <th scope="col" style="width: 25%">Komut</th>
+                    <th scope="col" style="width: 50%">Açıklama</th>
+                    <th scope="col" style="width: 25%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <%for(var i = 0; i < bot.cmdd[guild.id].length; i++) {%>
+              <tr>
+                  <th scope="row"><%=Object.keys(bot.cmdd[guild.id][i])%></th>
+                  <td><%=bot.cmdd[guild.id][i][Object.keys(bot.cmdd[guild.id][i])]%></td>
+                  <td><a class="btn btn-danger" href="/panel/<%=guild.id%>/ozelkomutlar/sil/<%=Object.keys(bot.cmdd[guild.id][i])%>">Komutu Sil</a></td>
+                 </tr>
+                  <%}%>
+            <%} else {%>
+                  <h5 align="center" style="color:#fff">
+                    Sunucuda hiç özel komut bulunmuyor.
+              </h5>
+              <%}%>
+            </tbody>
+        </table>
+               
+          <div style="width: 100%; text-align: right; margin-top: 15px;">
+      <a href="yonet" button style="background-color:orange; color:#fff" type="sumbit" id="formbtn" class="btn btn-default"> <i class="fas fa-angle-left" aria-hidden="true"></i> Geri Dön</button> </a>    </div>
+
+          </div>
+    </div></div>
+  
+</div>
+    
+</div>
+        
+      <!-- End Navbar -->
+      
+  <script src="/css/js/jquery.min.js"></script>
+  <script src="/css/js/popper.min.js"></script>
+  <script src="/css/js/bootstrap-material-design.min.js"></script>
+  <script src="https://unpkg.com/default-passive-events"></script>
+  <script src="/css/js/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!--  Google Maps Plugin    -->
+
+  <!-- Chartist JS -->
+  <script src="/css/js/chartist.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="/css/js/bootstrap-notify.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/css/js/material-dashboard.js?v=2.1.0"></script>
+    
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="/css/js/demo.js"></script>
+
+ <!--   Core JS Files   -->
+  
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+
+        $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+
+        window_width = $(window).width();
+
+        $('.fixed-plugin a').click(function(event) {
+          // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .active-color span').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-color', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .background-color .badge').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('background-color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-background-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .img-holder').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).parent('li').siblings().removeClass('active');
+          $(this).parent('li').addClass('active');
+
+
+          var new_image = $(this).find("img").attr('src');
+
+          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            $sidebar_img_container.fadeOut('fast', function() {
+              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+              $sidebar_img_container.fadeIn('fast');
+            });
+          }
+
+          if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $full_page_background.fadeOut('fast', function() {
+              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+              $full_page_background.fadeIn('fast');
+            });
+          }
+
+          if ($('.switch-sidebar-image input:checked').length == 0) {
+            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+          }
+        });
+
+        $('.switch-sidebar-image input').change(function() {
+          $full_page_background = $('.full-page-background');
+
+          $input = $(this);
+
+          if ($input.is(':checked')) {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar_img_container.fadeIn('fast');
+              $sidebar.attr('data-image', '#');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page_background.fadeIn('fast');
+              $full_page.attr('data-image', '#');
+            }
+
+            background_image = true;
+          } else {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar.removeAttr('data-image');
+              $sidebar_img_container.fadeOut('fast');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page.removeAttr('data-image', '#');
+              $full_page_background.fadeOut('fast');
+            }
+
+            background_image = false;
+          }
+        });
+
+        $('.switch-sidebar-mini input').change(function() {
+          $body = $('body');
+
+          $input = $(this);
+
+          if (md.misc.sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            md.misc.sidebar_mini_active = false;
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+          } else {
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+            setTimeout(function() {
+              $('body').addClass('sidebar-mini');
+
+              md.misc.sidebar_mini_active = true;
+            }, 300);
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+
+        });
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
+    });
+  </script>
+</body>
+
+</html>
+<%- include('footer.ejs', {bot, user, path}) %>

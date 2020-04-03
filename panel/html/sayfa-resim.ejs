@@ -1,0 +1,94 @@
+<!--HEADER-->
+
+<%- include('başlık.ejs', {bot, user, path}) %>
+
+  <!-- HEADER -->
+
+    <% if (bot.ayar.has(`karalist_${user.id}`)) return "Botun komutlarını kullanabilme ve siteyi görme hakkınız bulunmamaktadır!";  { %>
+ <% } %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<div class="container">
+
+	<div class="row justify-content-md-center">
+	<div align="center"><h2 style="color: #fff;"><i class="fa fa-wrench fa-fw" aria-hidden="true"></i> Davet Sistemi</h2></div>
+  </div>
+	
+  <!--<center><h7 style="color:red">Bakımda...</h7></center>-->
+  
+  
+  
+	<div class="row">
+    
+<div class="col">
+    <div class="container">
+      <form method="post">
+        <ul class="list-group list-group-flush">
+          
+  
+    
+  
+    
+           <div class="row">
+        <div class="col-25">
+          <label for="resim">Davet kanalı</label>
+        </div>
+        <div class="col-75">
+          <% if (bot.ayar.has(`gc_${guild.id}`) === false) { %>
+          <select style="text-align: left; width:87%;" name="resim" id="resim">
+            <option disabled selected>Lütfen bir kanal seçiniz.</option>
+            <% guild.channels.filter(c => c.type === "text").forEach(c => { %>
+            <option value="<%=c.id%>">#<%=c.name%></option>
+            <% }); %>
+          </select>
+          <a href="/panel/<%=guild.id%>/resim/sifirla" class="reset-btn" role="button">Sıfırla</a>
+          <% } %>
+					<% if(bot.ayar.has(`gc_${guild.id}`) === true) { %>
+          <select style="text-align: left; width:87%;" name="resim" id="resim">
+            <option value="<%=bot.ayar.fetch(`gc_${guild.id}`)%>"><%=guild.channels.get(bot.ayar.fetch(`gc_${guild.id}`)).name%></option>
+					 <% guild.channels.filter(c => c.type === "text").filter(c => c.id !== bot.ayar.fetch(`gc_${guild.id}`)).forEach(c => { %>
+            <option value="<%=c.id%>">#<%=c.name%></option>
+          <% }); %>
+          </select>
+          <a href="/panel/<%=guild.id%>/resim/sifirla" class="reset-btn" role="button">Sıfırla</a>
+          <% } %>
+        </div>
+      </div>
+        
+    
+
+              
+        </ul>
+        
+        
+      
+        
+          <div style="width: 100%; text-align: right; margin-top: 15px;">
+      <button style="background-color:blue; color:#fff" type="sumbit" id="formbtn" class="btn btn-default" ><i class="fa fa-fw fa-save" aria-hidden="true"></i> Kaydet</button>
+      <a href="yonet" button style="background-color:orange; color:#fff" type="sumbit" id="formbtn" class="btn btn-default"> <i class="fas fa-angle-left" aria-hidden="true"></i> Geri Dön</button> </a>    </div>
+
+            
+        
+        </div>
+      </form>
+    </div>
+  </div>
+    
+</div>
+
+     
+  
+<script>
+	var ts = parseInt($('#guildCreate').text());
+	$('#guildCreate').html(`<strong>Created:</strong>: ${moment(ts).format('MMMM Do YYYY (h:mm a)')}`);  
+  
+  
+ 
+  
+  
+  
+  
+</script>
+
+<%- include('footer.ejs', {bot, user, path}) %>
