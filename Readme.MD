@@ -1,4 +1,4 @@
 
 Bu kodlar bana ait değildir. 
 
-Yusuf K Dev.#3004 Kişiye aittir.
+Yusuf K#0001 Kişiye aittir.
